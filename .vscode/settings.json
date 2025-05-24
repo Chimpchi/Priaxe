@@ -3,6 +3,7 @@
     "files.associations": {
         "asserts.h": "c",
         "platform.h": "c",
-        "defines.h": "c"
+        "defines.h": "c",
+        "unistd.h": "c"
     }
 }
