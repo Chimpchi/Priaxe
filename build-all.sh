@@ -3,6 +3,8 @@
 
 set -e #Exit on error
 echo "Build everything..."
+outputPath=./bin/linux/
+mkdir -p "$outputPath"
 
 # Build engine
 pushd engine >/dev/null

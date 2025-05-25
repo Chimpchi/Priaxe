@@ -2,15 +2,16 @@
 REM Build Everything
 
 ECHO "Building everything..."
-
+SET outputPath=./bin/windows/
+mkdir "%outputPath%"
 
 PUSHD engine
-CALL build.bat
+CALL build.bat %outputPath%
 POPD
 IF %ERRORLEVEL% NEQ 0 (echo Error:%ERRORLEVEL% && exit)
 
 PUSHD testbed
-CALL build.bat
+CALL build.bat %outputPath%
 POPD
 IF %ERRORLEVEL% NEQ 0 (echo Error:%ERRORLEVEL% && exit)
 
