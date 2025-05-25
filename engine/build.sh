@@ -6,7 +6,7 @@ cFilenames=$(find . -name "*.c")
 
 # Define variables
 assembly="libengine"
-outputPath="./$1"
+outputPath="../$1"
 compilerFlags="-g -shared -w"
 includeFlags="-Isrc"
 linkerFlags="-lvulkan -lxcb -lX11 -lX11-xcb"

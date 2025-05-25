@@ -6,7 +6,7 @@ cFilenames=$(find . -name "*.c")
 
 # Define variables
 assembly="libeditor"
-outputPath="./$1"
+outputPath=../"$1"
 compilerFlags="-g -w"
 includeFlags="-Isrc -I../engine/src/"
 linkerFlags="-L../bin -lengine"
