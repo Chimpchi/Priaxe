@@ -84,18 +84,18 @@ STATIC_ASSERT(sizeof(f64) == 8, "Expected f64 to be 8 bytes.");
 #error "Unknown platform!"
 #endif
 
-#ifdef KEXPORT
+#ifdef PRIAXE_EXPORT
 // Exports
-#ifdef _MSC_VER
-#define PRIAXE_API __declspec(dllexport)
-#else
-#define PRIAXE_API __attribute__((visibility("default")))
-#endif
+#   ifdef _MSC_VER
+#       define PRIAXE_API __declspec(dllexport)
+#   else
+#       define PRIAXE_API __attribute__((visibility("default")))
+#   endif
 #else
 // Imports
-#ifdef _MSC_VER
-#define PRIAXE_API __declspec(dllimport)
-#else
-#define PRIAXE_API
-#endif
+#   ifdef _MSC_VER
+#       define PRIAXE_API __declspec(dllimport)
+#   else
+#       define PRIAXE_API
+#   endif
 #endif

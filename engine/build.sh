@@ -10,7 +10,7 @@ outputPath="../$1"
 compilerFlags="-g -shared -w"
 includeFlags="-Isrc"
 linkerFlags="-lvulkan -lxcb -lX11 -lX11-xcb"
-defines="-D_DEBUG -DKEXPORT -D_CRT_SECURE_NO_WARNINGS"
+defines="-D_DEBUG -DPRIAXE_EXPORT -D_CRT_SECURE_NO_WARNINGS"
 
 echo "Building $assembly..."
 gcc $cFilenames $compilerFlags -o $outputPath$assembly.so $defines $includeFlags $linkerFlags

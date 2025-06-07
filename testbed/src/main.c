@@ -1,28 +1,21 @@
-#include <core/logger.h>
-#include <core/asserts.h>
+#include "game.h"
 
+#include <entry.h>
 #include <platform/platform.h>
 
-int main(void)
+b8 startup_game(game* out_game)
 {
-    PRIAXE_FATAL("Test Message: %f", 61.123f);
-    PRIAXE_ERROR("Test Message: %f", 61.123f);
-    PRIAXE_WARN("Test Message: %f", 61.123f);
-    PRIAXE_INFO("Test Message: %f", 61.123f);
-    PRIAXE_DEBUG("Test Message: %f", 61.123f);
-    PRIAXE_TRACE("Test Message: %f", 61.123f);
+    out_game->win_config.x = 100;
+    out_game->win_config.y = 100;
+    out_game->win_config.width = 1920;
+    out_game->win_config.height = 1080;
+    out_game->win_config.title = "Priaxe Engine Testbed";
 
-    PRIAXE_INFO("Hello, World! %i %i", 34543, 43);
+    out_game->init = game_init;
+    out_game->update = game_update;
+    out_game->render = game_render;
+    out_game->on_resize = game_on_resize;
 
-    platform_state state;
-    if(platform_startup(&state, "Priaxe Engine", 100, 100, 1280, 720))
-    {
-        while(TRUE)
-        {
-            platform_pump_messages(&state);
-        }
-    }
-    
-    platform_shutdown(&state);
-    return 0;
+    out_game->state = platform_allocate(sizeof(game_state), FALSE);
+    return TRUE;
 }
