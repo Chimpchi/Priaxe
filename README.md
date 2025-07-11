@@ -4,11 +4,11 @@
 
 ---
 
-## Features
+## Engine Roadmap
 
 - **Lightweight Core:** Minimal dependencies and a highly optimized C codebase for maximum performance.
 - **Modular Design:** Easily extendable components for physics, rendering, and input handling.
-- **Cross-Platform:** Develop games for Windows, Linux, and macOS out of the box.
+- **Cross-Platform:** Develop games for Windows and Linux out of the box.
 - **2D and 3D Support:** Simple APIs for rendering sprites, shapes, and basic 3D objects.
 - **Physics Engine:** Built-in collision detection and physics system.
 - **Audio Handling:** Play sounds and background music with ease.
@@ -20,28 +20,37 @@
 
 ### Prerequisites
 
-- A C compiler (e.g., GCC or Clang).
-- CMake (optional, for build configuration).
+- A C compiler **(e.g., GCC or Clang).**
 - Basic knowledge of C programming.
 
 ### Installation
 
-1. Clone the repository:
+**1. Clone the repository:**
    ```bash
    git clone https://github.com/Chimpchi/priaxe.git
    cd priaxe
+   ```
 
-2. Build the engine:
-   ```bash
-   clang -o priaxe priaxe.c
+ **2.Run the appropriate setup script for your OS:**
+- **Windows:**
+    Double-click setup.bat or run it from a terminal:
+    ```bash
+    ./build-all.bat
+    ```
+- **Linux:**
+    Make the shell script executable and run it:
+    ```bash
+    chmod +x setup.sh
+    ./build-all.sh
+    ```
 
 3. Include the engine in your project:
     ```bash
     #include "priaxe.h"
-    
-## Documentation
+    ```
 
+## Documentation
 Documentation will be made once the engine is developed.
 
 ## License
-Priaxe is licensed under the [**Apache-2.0 License**](https://opensource.org/license/apache-2-0). See the LICENSE file for details
+Priaxe is licensed under the [**MIT License.**](LICENSE) See the **LICENSE** file for details
